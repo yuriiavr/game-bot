@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MMORPG Битва Додіків — Гайд</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700&family=Inter:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg-color: #0f1014;
+        --card-bg: #1a1c23;
+        --accent-color: #ff3e3e;
+        --text-main: #e1e1e6;
+        --text-dim: #a0a0b0;
+        --gold: #ffca28;
+        --success: #4caf50;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background-color: var(--bg-color);
+        color: var(--text-main);
+        font-family: "Inter", sans-serif;
+        line-height: 1.6;
+        padding: 20px;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: "Unbounded", sans-serif;
+        text-transform: uppercase;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      header {
+        text-align: center;
+        padding: 40px 0;
+        border-bottom: 2px solid var(--card-bg);
+        margin-bottom: 40px;
+      }
+
+      header h1 {
+        font-size: 2rem;
+        color: var(--accent-color);
+        margin-bottom: 10px;
+        text-shadow: 0 0 15px rgba(255, 62, 62, 0.4);
+      }
+
+      header p {
+        color: var(--text-dim);
+        font-size: 1.1rem;
+      }
+
+      .section {
+        margin-bottom: 40px;
+      }
+
+      .section-title {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 20px;
+        font-size: 1.4rem;
+        color: var(--text-main);
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+      }
+
+      @media (max-width: 600px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .card {
+        background: var(--card-bg);
+        padding: 20px;
+        border-radius: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        transition: transform 0.2s;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        border-color: var(--accent-color);
+      }
+
+      .cmd {
+        display: inline-block;
+        background: #2d303e;
+        color: var(--accent-color);
+        padding: 4px 10px;
+        border-radius: 6px;
+        font-family: monospace;
+        font-weight: bold;
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+      }
+
+      .card h3 {
+        font-size: 1rem;
+        margin-bottom: 8px;
+      }
+
+      .card p {
+        font-size: 0.9rem;
+        color: var(--text-dim);
+      }
+
+      .item-list {
+        list-style: none;
+      }
+
+      .item-row {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        background: rgba(255, 255, 255, 0.03);
+        margin-bottom: 8px;
+        border-radius: 8px;
+      }
+
+      .price {
+        color: var(--gold);
+        font-weight: bold;
+      }
+
+      .footer {
+        text-align: center;
+        padding: 40px;
+        font-size: 0.8rem;
+        color: var(--text-dim);
+      }
+
+      .badge {
+        background: var(--accent-color);
+        color: white;
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-size: 0.7rem;
+        vertical-align: middle;
+        margin-left: 5px;
+      }
+
+      .item-desc {
+        display: block;
+        font-size: 0.8rem;
+        color: var(--text-dim);
+        margin-top: 4px;
+        font-style: italic;
+      }
+      .slot-badge {
+        background: #333;
+        color: #aaa;
+        font-size: 0.65rem;
+        padding: 1px 5px;
+        border-radius: 3px;
+        text-transform: uppercase;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>⚔️ БИТВА ДОДІКІВ</h1>
+        <p>Твій шлях від голого додіка до легенди</p>
+      </header>
+
+      <div class="section">
+        <h2 class="section-title">🕹 Базові команди</h2>
+        <div class="grid">
+          <div class="card">
+            <div class="cmd">/start</div>
+            <h3>Початок</h3>
+            <p>Запуск бота та головне меню гри.</p>
+          </div>
+          <div class="card">
+            <div class="cmd">/profile</div>
+            <h3>Профіль</h3>
+            <p>
+              Твій рівень, XP, золото, шмот та характеристики (Сила/Спритність).
+            </p>
+          </div>
+          <div class="card">
+            <div class="cmd">/quest</div>
+            <h3>Фарм</h3>
+            <p>
+              Піти працювати: OLX, OnlyFans або Glovo. Шанс заробити кеш або
+              отримати по пиці.
+            </p>
+          </div>
+          <div class="card">
+            <div class="cmd">/heal</div>
+            <h3>Лікування</h3>
+            <p>
+              Коштує 100💰. Повністю відновлює HP. Рекомендується після важких
+              змін на районі.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">🛒 Екіпірування</h2>
+        <div class="card">
+          <div class="cmd">/shop</div>
+          <p style="margin-bottom: 15px">
+            Відкриває магазин. Можна купити зброю, броню або їжу.
+          </p>
+
+          <div class="cmd">/equip [назва]</div>
+          <p>
+            Вдягнути предмет з інвентаря. Наприклад: <br /><code
+              >/equip nokia</code
+            >
+            або <code>/equip gucci_cap</code>
+          </p>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">👊 Бойова система</h2>
+        <div class="card" style="border-left: 4px solid var(--accent-color)">
+          <div class="cmd">/fight</div>
+          <p>
+            <strong>Як битися:</strong> Напиши цю команду у
+            <b>відповідь (reply)</b> на повідомлення іншого гравця в чаті.
+          </p>
+          <ul
+            style="
+              margin-top: 10px;
+              padding-left: 20px;
+              color: var(--text-dim);
+              font-size: 0.9rem;
+            "
+          >
+            <li>Шанс влучання залежить від кубика d20 та твоєї спритності.</li>
+            <li>Шкода залежить від зброї та сили.</li>
+            <li>Критичний удар (20 на кубику) подвоює шкоду!</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">💎 Повний перелік шмоту</h2>
+
+        <h3
+          style="
+            margin: 20px 0 10px;
+            color: var(--accent-color);
+            font-size: 0.9rem;
+          "
+        >
+          ⚔️ Зброя (Weapon)
+        </h3>
+        <div class="item-list">
+          <div
+            class="item-row"
+            style="flex-direction: column; align-items: flex-start"
+          >
+            <div
+              style="display: flex; justify-content: space-between; width: 100%"
+            >
+              <span
+                >📱 Nokia 3310 <span class="badge">nokia</span>
+                <span class="slot-badge">В одну руку</span></span
+              >
+              <span class="price">150💰</span>
+            </div>
+            <span class="item-desc"
+              >Легендарна цегла. Шкода: 4d + 1 бонус.</span
+            >
+          </div>
+          <div
+            class="item-row"
+            style="flex-direction: column; align-items: flex-start"
+          >
+            <div
+              style="display: flex; justify-content: space-between; width: 100%"
+            >
+              <span
+                >🤳 Селфі-палка <span class="badge">selfie_stick</span>
+                <span class="slot-badge">В одну руку</span></span
+              >
+              <span class="price">120💰</span>
+            </div>
+            <span class="item-desc"
+              >Для дальніх ударів та контенту. Шкода: 4d.</span
+            >
+          </div>
+          <div
+            class="item-row"
+            style="flex-direction: column; align-items: flex-start"
+          >
+            <div
+              style="display: flex; justify-content: space-between; width: 100%"
+            >
+              <span
+                >⌨️ Механічна клава <span class="badge">keyboard</span>
+                <span class="slot-badge">Дворучна</span></span
+              >
+              <span class="price">500💰</span>
+            </div>
+            <span class="item-desc"
+              >Важка артилерія для справжніх програмістів. Шкода: 10d + 2
+              бонуси.</span
+            >
+          </div>
+          <div
+            class="item-row"
+            style="flex-direction: column; align-items: flex-start"
+          >
+            <div
+              style="display: flex; justify-content: space-between; width: 100%"
+            >
+              <span
+                >📱 iPhone 15 Pro <span class="badge">iphone_pro_max</span>
+                <span class="slot-badge">В одну руку</span></span
+              >
+              <span class="price">2500💰</span>
+            </div>
+            <span class="item-desc"
+              >Титановий корпус б'є боляче. Шкода: 12d + 5 бонусів.</span
+            >
+          </div>
+          <div
+            class="item-row"
+            style="flex-direction: column; align-items: flex-start"
+          >
+            <div
+              style="display: flex; justify-content: space-between; width: 100%"
+            >
+              <span
+                >💻 MacBook M3 Max <span class="badge">macbook_m3</span>
+                <span class="slot-badge">Дворучна</span></span
+              >
+              <span class="price">5000💰</span>
+            </div>
+            <span class="item-desc"
+              >Ультимативна потужність. Шкода: 20d + 8 бонусів.</span
+            >
+          </div>
+        </div>
+
+        <h3
+          style="
+            margin: 20px 0 10px;
+            color: var(--accent-color);
+            font-size: 0.9rem;
+          "
+        >
+          🛡 Броня (Armor)
+        </h3>
+        <div class="item-list">
+          <div
+            class="item-row"
+            style="flex-direction: column; align-items: flex-start"
+          >
+            <div
+              style="display: flex; justify-content: space-between; width: 100%"
+            >
+              <span
+                >🍲 Дуршлаг <span class="badge">colander</span>
+                <span class="slot-badge">Голова</span></span
+              >
+              <span class="price">50💰</span>
+            </div>
+            <span class="item-desc"
+              >Захист від макаронів та легких ляпасів. +1 AC.</span
+            >
+          </div>
+          <div
+            class="item-row"
+            style="flex-direction: column; align-items: flex-start"
+          >
+            <div
+              style="display: flex; justify-content: space-between; width: 100%"
+            >
+              <span
+                >🧢 Кепка Gucci <span class="badge">gucci_cap</span>
+                <span class="slot-badge">Голова</span></span
+              >
+              <span class="price">1200💰</span>
+            </div>
+            <span class="item-desc">Стиль понад усе. +3 AC.</span>
+          </div>
+          <div
+            class="item-row"
+            style="flex-direction: column; align-items: flex-start"
+          >
+            <div
+              style="display: flex; justify-content: space-between; width: 100%"
+            >
+              <span
+                >🧥 Куртка 'Клітчаста' <span class="badge">kletchataya</span>
+                <span class="slot-badge">Тулуб</span></span
+              >
+              <span class="price">300💰</span>
+            </div>
+            <span class="item-desc">Класика ринку "Юність". +3 AC.</span>
+          </div>
+          <div
+            class="item-row"
+            style="flex-direction: column; align-items: flex-start"
+          >
+            <div
+              style="display: flex; justify-content: space-between; width: 100%"
+            >
+              <span
+                >🗑 Мішок Balenciaga <span class="badge">balenciaga_trash</span>
+                <span class="slot-badge">Тулуб</span></span
+              >
+              <span class="price">3500💰</span>
+            </div>
+            <span class="item-desc"
+              >Висока мода для елітних додіків. +8 AC.</span
+            >
+          </div>
+          <div
+            class="item-row"
+            style="flex-direction: column; align-items: flex-start"
+          >
+            <div
+              style="display: flex; justify-content: space-between; width: 100%"
+            >
+              <span
+                >🧦 Шкарпетки/Сандалі <span class="badge">socks_sandals</span>
+                <span class="slot-badge">Ноги</span></span
+              >
+              <span class="price">100💰</span>
+            </div>
+            <span class="item-desc"
+              >+4 до захисту через повну відсутність смаку.</span
+            >
+          </div>
+          <div
+            class="item-row"
+            style="flex-direction: column; align-items: flex-start"
+          >
+            <div
+              style="display: flex; justify-content: space-between; width: 100%"
+            >
+              <span
+                >👟 Yeezy Boost <span class="badge">yeezy_boost</span>
+                <span class="slot-badge">Ноги</span></span
+              >
+              <span class="price">2000💰</span>
+            </div>
+            <span class="item-desc">Дозволяє втікати красиво. +3 AC.</span>
+          </div>
+          <div
+            class="item-row"
+            style="flex-direction: column; align-items: flex-start"
+          >
+            <div
+              style="display: flex; justify-content: space-between; width: 100%"
+            >
+              <span
+                >🎒 Рюкзак Glovo <span class="badge">backpack_glovo</span>
+                <span class="slot-badge">Спина</span></span
+              >
+              <span class="price">600💰</span>
+            </div>
+            <span class="item-desc">+2 до броні, поки несеш замовлення.</span>
+          </div>
+          <div
+            class="item-row"
+            style="flex-direction: column; align-items: flex-start"
+          >
+            <div
+              style="display: flex; justify-content: space-between; width: 100%"
+            >
+              <span
+                >🧣 Бабусин килим <span class="badge">carpet_cape</span>
+                <span class="slot-badge">Спина</span></span
+              >
+              <span class="price">300💰</span>
+            </div>
+            <span class="item-desc">Магічний ворс зупиняє кулі. +6 AC.</span>
+          </div>
+        </div>
+
+        <h3
+          style="
+            margin: 20px 0 10px;
+            color: var(--accent-color);
+            font-size: 0.9rem;
+          "
+        >
+          🍔 Витратні матеріали (Consumables)
+        </h3>
+        <div class="item-list">
+          <div
+            class="item-row"
+            style="flex-direction: column; align-items: flex-start"
+          >
+            <div
+              style="display: flex; justify-content: space-between; width: 100%"
+            >
+              <span>🍺 Магічне пиво <span class="badge">pivo</span></span>
+              <span class="price">60💰</span>
+            </div>
+            <span class="item-desc"
+              >Відновлює 25 HP. Знімає стрес, але не похмілля.</span
+            >
+          </div>
+          <div
+            class="item-row"
+            style="flex-direction: column; align-items: flex-start"
+          >
+            <div
+              style="display: flex; justify-content: space-between; width: 100%"
+            >
+              <span>☕️ Старбакс Лате <span class="badge">starbucks</span></span>
+              <span class="price">150💰</span>
+            </div>
+            <span class="item-desc">Миттєвий заряд бадьорості. +60 HP.</span>
+          </div>
+          <div
+            class="item-row"
+            style="flex-direction: column; align-items: flex-start"
+          >
+            <div
+              style="display: flex; justify-content: space-between; width: 100%"
+            >
+              <span>🌯 VIP Кебаб <span class="badge">kebab_vip</span></span>
+              <span class="price">250💰</span>
+            </div>
+            <span class="item-desc"
+              >Повний регенерат душі та тіла. +100 HP.</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <p>© 2026 MMORPG Битва Додіків. Всі права захищені, окрім жіночих.</p>
+      </div>
+    </div>
+  </body>
+</html>
